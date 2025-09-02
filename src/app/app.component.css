@@ -1,0 +1,348 @@
+:host {
+  --primary-color: #006DFE;
+  --secondary-color: #09B6DD;
+  --dark-blue: #004AAB;
+  --light-blue: #4DB8FF;
+  --white: #FFF;
+  --gray-100: #F8F9FA;
+  --gray-200: #E9ECEF;
+  --gray-700: #495057;
+  --gray-900: #212529;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat',sans-serif;
+  box-sizing: border-box;
+  overflow: hidden; /* Impede qualquer scroll na página */
+}
+
+*,*::before,*::after {box-sizing: border-box;margin: 0;padding: 0}
+
+:root,body,app-root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.maintenance-container {
+  height:100vh; /* Mudado de min-height para height */
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between; /* Mudado para space-between para melhor distribuição */
+  padding:1rem 2rem; /* Padding ajustado para ter mais espaço vertical */
+  text-align:center;
+  background:radial-gradient(circle at center,rgba(9,182,221,.05) 0%,rgba(0,109,254,.1) 100%);
+  overflow:hidden; /* Impede o scroll */
+}
+
+.logo-container {
+  margin-bottom:1.5rem; /* Reduzido o margin-bottom */
+  position:relative;
+  width:150px; /* Reduzido o tamanho do logo */
+  height:150px; /* Reduzido o tamanho do logo */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.logo-placeholder {
+  width:150px; /* Reduzido o tamanho do logo */
+  height:150px; /* Reduzido o tamanho do logo */
+  background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:3.5rem; /* Reduzido o tamanho da fonte */
+  font-weight:700;
+  text-shadow:2px 2px 4px rgba(0,0,0,.2);
+  position:relative;
+  z-index:2;
+  box-shadow:0 10px 25px rgba(0,109,254,.3);
+}
+
+.logo-glow {
+  position:absolute;
+  width:150px; /* Reduzido o tamanho do glow */
+  height:150px; /* Reduzido o tamanho do glow */
+  inset:0;
+  margin:auto;
+  background:var(--primary-color);
+  border-radius:50%;
+  filter:blur(30px);
+  opacity:.3;
+  animation:pulse 3s infinite alternate;
+  z-index:1;
+}
+
+.content {
+  max-width:700px;
+  width:100%;
+  margin:0 auto;
+  padding:0 1rem;
+  animation:fadeIn 1s ease-in;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  flex: 1; /* Permite que o conteúdo ocupe o espaço disponível */
+  justify-content: space-around; /* Distribui o espaço entre os elementos */
+}
+
+h1 {
+  font-size:2.5rem; /* Reduzido o tamanho da fonte */
+  margin-bottom:1rem; /* Reduzido a margem */
+  color:var(--primary-color);
+  font-weight:700;
+  letter-spacing:-1px;
+  text-shadow:0 2px 4px rgba(0,0,0,.1);
+  width:100%;
+}
+
+h2 {
+  font-size:1.3rem; /* Reduzido o tamanho da fonte */
+  margin-bottom:1.2rem; /* Reduzido a margem */
+  color:var(--gray-700);
+  font-weight:500;
+  width:100%;
+}
+
+p {
+  font-size:1rem; /* Reduzido o tamanho da fonte */
+  margin-bottom:1.2rem; /* Reduzido a margem */
+  line-height:1.6; /* Reduzido o espaçamento entre linhas */
+  color:var(--gray-700);
+  max-width:600px;
+}
+
+.progress-container {
+  width:100%;
+  max-width:500px;
+  height:8px;
+  margin-bottom:1.5rem; /* Reduzido a margem */
+  position:relative;
+  background-color:var(--gray-200);
+  border-radius:4px;
+  overflow:hidden;
+}
+
+.progress-bar {
+  height:100%;
+  width:75%;
+  background:linear-gradient(90deg,var(--primary-color),var(--secondary-color));
+  border-radius:4px;
+  position:relative;
+  overflow:hidden;
+  animation:progress 2.5s ease-in-out infinite alternate;
+}
+
+.progress-glow {
+  position:absolute;
+  top:0;
+  left:0;
+  width:60px;
+  height:100%;
+  background:rgba(255,255,255,.4);
+  filter:blur(5px);
+  animation:glow 2s ease-in-out infinite;
+}
+
+.scooter-animation {
+  margin:1rem 0; /* Reduzido a margem */
+  position:relative;
+  width:250px; /* Reduzido a largura */
+  height:60px; /* Reduzido a altura */
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  overflow:hidden;
+}
+
+.scooter {
+  font-size:3rem;
+  animation:drive 8s linear infinite;
+  position:relative;
+  display:inline-block;
+  margin-bottom:10px;
+  filter:drop-shadow(0 5px 10px rgba(0,0,0,.2));
+  z-index:2;
+  /* Removido transform:scaleX(-1) para que a scooter fique orientada corretamente */
+}
+
+.road {
+  width:100%;
+  height:4px;
+  background-color:var(--gray-700);
+  position:relative;
+  margin:0 auto;
+  border-radius:2px;
+  bottom:5px;
+}
+
+.dot {
+  width:4px;
+  height:4px;
+  background-color:var(--white);
+  position:absolute;
+  top:0;
+  border-radius:50%;
+}
+
+.dot:nth-child(1){left:10%}
+.dot:nth-child(2){left:30%}
+.dot:nth-child(3){left:50%}
+.dot:nth-child(4){left:70%}
+.dot:nth-child(5){left:90%}
+
+.social-links {
+  margin-top:1.5rem; /* Reduzido a margem */
+  display:flex;
+  justify-content:center;
+  gap:1.2rem; /* Reduzido o espaçamento entre ícones */
+}
+
+.social-icon {
+  width:45px;
+  height:45px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  color:var(--white);
+  background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));
+  transition:transform .3s,box-shadow .3s;
+  box-shadow:0 4px 10px rgba(0,109,254,.2);
+}
+
+.social-icon:hover {
+  transform:translateY(-5px);
+  box-shadow:0 10px 20px rgba(0,109,254,.3);
+}
+
+.contact-info {
+  margin-top:1.2rem; /* Reduzido a margem */
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0.8rem; /* Reduzido o espaçamento */
+  width:100%;
+  max-width:400px;
+}
+
+.contact-item {
+  width:100%;
+  display:flex;
+  justify-content:center;
+}
+
+.contact-link {
+  display:flex;
+  align-items:center;
+  gap:.5rem; /* Reduzido o espaçamento */
+  padding:.6rem 1.2rem; /* Reduzido o padding */
+  border-radius:50px;
+  background-color:var(--white);
+  color:var(--gray-900);
+  text-decoration:none;
+  font-weight:500;
+  box-shadow:0 4px 10px rgba(0,0,0,.08);
+  transition:all .3s;
+  width:100%;
+  justify-content:center;
+}
+
+.contact-link:hover {
+  transform:translateY(-2px);
+  box-shadow:0 8px 15px rgba(0,109,254,.15);
+  color:var(--primary-color);
+}
+
+.btn {
+  padding:1rem 2rem;
+  background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));
+  color:#fff;
+  border:none;
+  border-radius:50px;
+  font-size:1rem;
+  font-weight:600;
+  cursor:pointer;
+  transition:all .3s;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  width:100%;
+  box-shadow:0 4px 10px rgba(0,109,254,.3);
+}
+
+.btn:hover {
+  transform:translateY(-2px);
+  box-shadow:0 10px 20px rgba(0,109,254,.4);
+  background:linear-gradient(135deg,var(--secondary-color),var(--primary-color));
+}
+
+footer {
+  margin-top:1rem; /* Reduzido significativamente a margem do rodapé */
+  color:var(--gray-700);
+  font-size:.8rem; /* Reduzido o tamanho da fonte */
+  padding:0.5rem; /* Reduzido o padding */
+  width:100%;
+}
+
+/* Animations */
+@keyframes pulse {0%{transform:scale(.95);opacity:.2}100%{transform:scale(1.05);opacity:.4}}
+@keyframes fadeIn {from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes progress {0%{width:20%}50%{width:80%}100%{width:60%}}
+@keyframes glow {0%{transform:translateX(-100%)}100%{transform:translateX(500%)}}
+@keyframes drive {0%{transform:translateX(150px)}100%{transform:translateX(-150px)}}
+
+/* Responsive Styles */
+@media (max-width:768px) {
+  .maintenance-container{padding:1.2rem 1rem;height:100vh;overflow:hidden}
+  h1{font-size:2.2rem}
+  h2{font-size:1.15rem}
+  p{font-size:.95rem;margin-bottom:1rem}
+  .logo-container{margin-bottom:1rem}
+  .logo-placeholder,.logo-glow{width:130px;height:130px}
+  .logo-placeholder{font-size:3rem}
+  .progress-container{margin-bottom:1rem}
+  .scooter-animation{margin:1rem 0}
+}
+
+@media (max-width:480px) {
+  .maintenance-container{padding:.75rem .5rem;justify-content:space-between;height:100vh;overflow:hidden}
+  .content{padding:0 .5rem;margin-bottom:0}
+  h1{font-size:1.8rem}
+  h2{font-size:1rem;margin-bottom:.8rem}
+  p{font-size:.85rem;margin-bottom:.8rem;line-height:1.4}
+  .logo-placeholder,.logo-glow{width:100px;height:100px}
+  .logo-placeholder{font-size:2.5rem}
+  .btn{padding:.75rem 1.5rem;font-size:.85rem}
+  .scooter{font-size:2rem}
+  .social-icon{width:35px;height:35px}
+  .social-links{gap:.75rem;margin-top:1rem}
+  .contact-info{margin-top:1rem;gap:.5rem}
+  .contact-link{padding:.5rem 1rem;font-size:.8rem}
+  footer{margin-top:.5rem;font-size:.75rem;padding:.3rem}
+  .scooter-animation{height:50px}
+}
+
+/* Ensure router-outlet doesn't interfere with layout */
+router-outlet {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+/* Ensure router-outlet doesn't interfere with layout */
+router-outlet {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
