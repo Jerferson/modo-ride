@@ -1,0 +1,38 @@
+<main class="catalog">
+  <section class="catalog-header">
+    <div class="container">
+      <div class="header-content fade-in-up">
+        <h1>Catálogo de produtos</h1>
+        <p>Explore nossa linha completa de scooters e bikes elétricas</p>
+      </div>
+
+      <div class="catalog-filters fade-in-up">
+        <button class="filter-btn" [class.active]="selectedCategory === 'all'" (click)="filterProducts('all')">
+          Todos ({{ allProducts.length }})
+        </button>
+        <button class="filter-btn" [class.active]="selectedCategory === 'scooter'" (click)="filterProducts('scooter')">
+          Scooters ({{ getProductCount('scooter') }})
+        </button>
+        <button class="filter-btn" [class.active]="selectedCategory === 'bike'" (click)="filterProducts('bike')">
+          Bikes ({{ getProductCount('bike') }})
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="catalog-content">
+    <div class="container">
+      <div class="products-grid">
+        <app-product-card *ngFor="let product of filteredProducts" [product]="product"
+          (notifyClick)="openModal($event)"></app-product-card>
+      </div>
+
+      <div class="no-products" *ngIf="filteredProducts.length === 0">
+        <h3>Nenhum produto encontrado</h3>
+        <p>Tente ajustar os filtros ou volte mais tarde.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<app-contact-modal [isOpen]="isModalOpen" [product]="selectedProduct" (closed)="closeModal()"></app-contact-modal>

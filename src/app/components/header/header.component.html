@@ -1,0 +1,24 @@
+<header class="header">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-brand">
+        <a routerLink="/" class="logo">
+          <span class="logo-text">Modo<span class="logo-accent">Ride</span></span>
+        </a>
+      </div>
+
+      <div class="nav-menu" [class.nav-menu-open]="isMenuOpen">
+        <a routerLink="/" class="nav-link" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">Início</a>
+        <a routerLink="/catalogo" class="nav-link" routerLinkActive="active">Catálogo</a>
+        <a routerLink="/sobre" class="nav-link" routerLinkActive="active">Sobre</a>
+      </div>
+
+      <button class="nav-toggle" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </div>
+</header>

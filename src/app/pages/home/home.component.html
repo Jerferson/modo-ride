@@ -1,0 +1,77 @@
+<main class="home">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text fade-in-up">
+          <h1>Revolucione sua mobilidade urbana</h1>
+          <p>Descubra nossa linha premium de scooters e bikes elétricas. Design inovador, tecnologia avançada e
+            qualidade incomparável para transformar seus deslocamentos.</p>
+          <div class="hero-actions">
+            <a routerLink="/catalogo" class="btn btn-primary">Ver catálogo</a>
+            <button class="btn btn-outline" (click)="scrollToProducts()">Produtos em destaque</button>
+          </div>
+        </div>
+        <div class="hero-image fade-in-up">
+          <img src="https://images.pexels.com/photos/9799072/pexels-photo-9799072.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="Scooter elétrico Modo Ride" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-item fade-in-up">
+          <div class="feature-icon">⚡</div>
+          <h3>Alta Performance</h3>
+          <p>Motores potentes e baterias de longa duração para máxima eficiência</p>
+        </div>
+        <div class="feature-item fade-in-up">
+          <div class="feature-icon">🌱</div>
+          <h3>Sustentável</h3>
+          <p>100% elétrico, zero emissão e contribuindo para um futuro mais limpo</p>
+        </div>
+        <div class="feature-item fade-in-up">
+          <div class="feature-icon">🔧</div>
+          <h3>Qualidade Premium</h3>
+          <p>Materiais de alta qualidade e acabamento impecável em cada detalhe</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products Section -->
+  <section class="featured-products" id="products">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="fade-in-up">Produtos <span class="highlight">Premium</span></h2>
+        <p class="fade-in-up">Descubra nossa coleção exclusiva de veículos elétricos de alta performance</p>
+      </div>
+
+      <div class="products-grid">
+        <app-product-card *ngFor="let product of featuredProducts" [product]="product"
+          (notifyClick)="openModal($event)"></app-product-card>
+      </div>
+
+      <div class="section-footer fade-in-up">
+        <a routerLink="/catalogo" class="btn btn-primary">Ver catálogo completo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-content fade-in-up">
+        <h2>Acelere para o Futuro</h2>
+        <p>Junte-se à revolução da mobilidade elétrica e transforme sua experiência urbana</p>
+        <a routerLink="/catalogo" class="btn btn-secondary">Explorar produtos</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<app-contact-modal [isOpen]="isModalOpen" [product]="selectedProduct" (closed)="closeModal()"></app-contact-modal>

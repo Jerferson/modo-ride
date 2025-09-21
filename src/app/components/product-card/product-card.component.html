@@ -1,0 +1,29 @@
+<p>product-card works!</p>
+<div class="product-card fade-in-up">
+  <div class="product-image">
+    <img [src]="product.image" [alt]="product.name" />
+    <div class="product-badge" *ngIf="product.featured">
+      <span>Destaque</span>
+    </div>
+  </div>
+
+  <div class="product-content">
+    <h3 class="product-name">{{ product.name }}</h3>
+    <p class="product-description">{{ product.shortDescription }}</p>
+
+    <div class="product-specs">
+      <div class="spec-item">
+        <span class="spec-label">Velocidade:</span>
+        <span class="spec-value">{{ product.specifications.maxSpeed }}</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-label">Autonomia:</span>
+        <span class="spec-value">{{ product.specifications.range }}</span>
+      </div>
+    </div>
+
+    <button class="btn btn-primary product-btn" (click)="onNotifyClick()">
+      Avise-me quando disponível
+    </button>
+  </div>
+</div>
