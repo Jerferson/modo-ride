@@ -15,7 +15,7 @@ declare global {
 })
 export class AnalyticsService {
   private isInitialized = false;
-  private readonly GA_MEASUREMENT_ID = 'GA_MEASUREMENT_ID'; // Substitua pelo seu ID real
+  private readonly GA_MEASUREMENT_ID = 'G-RF9HWKBNKH'; // Substitua pelo seu ID real
 
   constructor(
     private router: Router,
@@ -66,7 +66,7 @@ export class AnalyticsService {
   // Tracking de page views
   trackPageView(url: string, title: string = ''): void {
     if (!isPlatformBrowser(this.platformId) || !this.isInitialized) return;
-    
+
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('config', this.GA_MEASUREMENT_ID, {
         page_path: url,
@@ -78,7 +78,7 @@ export class AnalyticsService {
   // Tracking de eventos customizados
   trackEvent(action: string, category: string, label?: string, value?: number): void {
     if (!isPlatformBrowser(this.platformId) || !this.isInitialized) return;
-    
+
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', action, {
         event_category: category,
@@ -91,7 +91,7 @@ export class AnalyticsService {
   // Tracking específico para e-commerce
   trackProduct(productId: string, productName: string, category: string, price: number): void {
     if (!isPlatformBrowser(this.platformId) || !this.isInitialized) return;
-    
+
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', 'view_item', {
         currency: 'BRL',
@@ -110,7 +110,7 @@ export class AnalyticsService {
   // Tracking de adição ao carrinho
   trackAddToCart(productId: string, productName: string, category: string, price: number, quantity: number = 1): void {
     if (!isPlatformBrowser(this.platformId) || !this.isInitialized) return;
-    
+
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', 'add_to_cart', {
         currency: 'BRL',
@@ -129,7 +129,7 @@ export class AnalyticsService {
   // Tracking de conversão/compra
   trackConversion(transactionId: string, value: number, items: any[]): void {
     if (!isPlatformBrowser(this.platformId) || !this.isInitialized) return;
-    
+
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', 'purchase', {
         transaction_id: transactionId,
