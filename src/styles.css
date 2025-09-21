@@ -13,11 +13,58 @@ body {
   overflow-x: hidden;
 }
 
+/* Skip link para acessibilidade */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #007bff;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 10000;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
 /* Global utility classes */
 .container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+/* Lazy loading styles */
+img.lazy-loading {
+  opacity: 0.5;
+  filter: blur(2px);
+  transition: all 0.3s ease;
+}
+
+img.lazy-loaded {
+  opacity: 1;
+  filter: none;
+  transition: all 0.3s ease;
+}
+
+img.lazy-error {
+  opacity: 0.3;
+  filter: grayscale(100%);
+}
+
+/* Loading placeholder animation */
+.loading-placeholder {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 
 .btn {

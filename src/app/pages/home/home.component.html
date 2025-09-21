@@ -1,20 +1,23 @@
-<main class="home">
+<main class="home" id="main-content">
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero" itemscope itemtype="https://schema.org/Organization">
     <div class="container">
       <div class="hero-content">
         <div class="hero-text fade-in-up">
-          <h1>Revolucione sua mobilidade urbana</h1>
-          <p>Descubra nossa linha premium de scooters e bikes elétricas. Design inovador, tecnologia avançada e
-            qualidade incomparável para transformar seus deslocamentos.</p>
+          <h1 itemprop="name">Modo Ride - Patinetes e Bicicletas Elétricas Premium</h1>
+          <p itemprop="description">Revolucione sua mobilidade urbana com nossos patinetes elétricos, bicicletas elétricas e acessórios de alta qualidade. Design inovador, tecnologia avançada e sustentabilidade para transformar seus deslocamentos pela cidade.</p>
           <div class="hero-actions">
-            <a routerLink="/catalogo" class="btn btn-primary">Ver catálogo</a>
-            <button class="btn btn-outline" (click)="scrollToProducts()">Produtos em destaque</button>
+            <a routerLink="/patinetes-eletricos" class="btn btn-primary" title="Ver catálogo de patinetes elétricos">Ver Patinetes Elétricos</a>
+            <button class="btn btn-outline" (click)="scrollToProducts()" title="Ver produtos em destaque">Produtos em Destaque</button>
           </div>
         </div>
         <div class="hero-image fade-in-up">
           <img src="https://images.pexels.com/photos/9799072/pexels-photo-9799072.jpeg?auto=compress&cs=tinysrgb&w=1200"
-            alt="Scooter elétrico Modo Ride" />
+            alt="Patinete elétrico Modo Ride - Mobilidade urbana sustentável e inovadora" 
+            title="Patinete Elétrico Premium - Modo Ride"
+            loading="eager"
+            width="600"
+            height="400" />
         </div>
       </div>
     </div>
@@ -23,22 +26,23 @@
   <!-- Features Section -->
   <section class="features">
     <div class="container">
+      <h2 class="section-title">Por que escolher a Modo Ride?</h2>
       <div class="features-grid">
-        <div class="feature-item fade-in-up">
+        <article class="feature-item fade-in-up">
           <div class="feature-icon">⚡</div>
-          <h3>Alta Performance</h3>
-          <p>Motores potentes e baterias de longa duração para máxima eficiência</p>
-        </div>
-        <div class="feature-item fade-in-up">
+          <h3>Alta Performance e Autonomia</h3>
+          <p>Patinetes elétricos e e-bikes com motores potentes e baterias de longa duração para máxima eficiência em seus trajetos urbanos</p>
+        </article>
+        <article class="feature-item fade-in-up">
           <div class="feature-icon">🌱</div>
-          <h3>Sustentável</h3>
-          <p>100% elétrico, zero emissão e contribuindo para um futuro mais limpo</p>
-        </div>
-        <div class="feature-item fade-in-up">
+          <h3>Mobilidade Sustentável</h3>
+          <p>Veículos 100% elétricos, zero emissão de poluentes e contribuindo para um futuro mais limpo e sustentável</p>
+        </article>
+        <article class="feature-item fade-in-up">
           <div class="feature-icon">🔧</div>
           <h3>Qualidade Premium</h3>
-          <p>Materiais de alta qualidade e acabamento impecável em cada detalhe</p>
-        </div>
+          <p>Materiais de alta qualidade, tecnologia avançada e acabamento impecável em cada detalhe dos nossos produtos</p>
+        </article>
       </div>
     </div>
   </section>
@@ -47,8 +51,8 @@
   <section class="featured-products" id="products">
     <div class="container">
       <div class="section-header">
-        <h2 class="fade-in-up">Produtos <span class="highlight">Premium</span></h2>
-        <p class="fade-in-up">Descubra nossa coleção exclusiva de veículos elétricos de alta performance</p>
+        <h2 class="fade-in-up">Nossos <span class="highlight">Produtos Premium</span></h2>
+        <p class="fade-in-up">Descubra nossa coleção exclusiva de patinetes elétricos, bicicletas elétricas e acessórios de alta performance para mobilidade urbana</p>
       </div>
 
       <div class="products-grid">
@@ -57,7 +61,66 @@
       </div>
 
       <div class="section-footer fade-in-up">
-        <a routerLink="/catalogo" class="btn btn-primary">Ver catálogo completo</a>
+        <a routerLink="/patinetes-eletricos" class="btn btn-primary" title="Ver catálogo completo de produtos">Ver Catálogo Completo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="categories">
+    <div class="container">
+      <h2 class="section-title">Explore Nossas Categorias</h2>
+      <div class="categories-grid">
+        <article class="category-card">
+          <a routerLink="/patinetes-eletricos" class="category-link">
+            <div class="category-image">
+              <img src="/assets/categories/patinetes-eletricos.webp" 
+                   alt="Patinetes Elétricos - Scooters de alta qualidade" 
+                   loading="lazy"
+                   width="300" 
+                   height="200">
+            </div>
+            <div class="category-content">
+              <h3>Patinetes Elétricos</h3>
+              <p>Scooters elétricos modernos para sua mobilidade urbana</p>
+              <span class="category-cta">Ver Produtos →</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="category-card">
+          <a routerLink="/bicicletas-eletricas" class="category-link">
+            <div class="category-image">
+              <img src="/assets/categories/bicicletas-eletricas.webp" 
+                   alt="Bicicletas Elétricas - E-bikes inovadoras" 
+                   loading="lazy"
+                   width="300" 
+                   height="200">
+            </div>
+            <div class="category-content">
+              <h3>Bicicletas Elétricas</h3>
+              <p>E-bikes com tecnologia avançada e design moderno</p>
+              <span class="category-cta">Ver Produtos →</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="category-card">
+          <a routerLink="/acessorios" class="category-link">
+            <div class="category-image">
+              <img src="/assets/categories/acessorios.webp" 
+                   alt="Acessórios para mobilidade urbana - Capacetes e peças" 
+                   loading="lazy"
+                   width="300" 
+                   height="200">
+            </div>
+            <div class="category-content">
+              <h3>Acessórios</h3>
+              <p>Capacetes, peças e acessórios para sua segurança</p>
+              <span class="category-cta">Ver Produtos →</span>
+            </div>
+          </a>
+        </article>
       </div>
     </div>
   </section>
@@ -66,9 +129,9 @@
   <section class="cta">
     <div class="container">
       <div class="cta-content fade-in-up">
-        <h2>Acelere para o Futuro</h2>
-        <p>Junte-se à revolução da mobilidade elétrica e transforme sua experiência urbana</p>
-        <a routerLink="/catalogo" class="btn btn-secondary">Explorar produtos</a>
+        <h2>Acelere para o Futuro da Mobilidade</h2>
+        <p>Junte-se à revolução da mobilidade elétrica sustentável e transforme sua experiência de transporte urbano com nossos produtos premium</p>
+        <a routerLink="/patinetes-eletricos" class="btn btn-secondary" title="Explorar produtos de mobilidade elétrica">Explorar Produtos</a>
       </div>
     </div>
   </section>

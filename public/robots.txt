@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# Páginas principais
+Allow: /
+Allow: /patinetes-eletricos
+Allow: /bicicletas-eletricas
+Allow: /bicicletas
+Allow: /acessorios
+Allow: /sobre-nos
+
+# Bloquear páginas administrativas ou de desenvolvimento
+Disallow: /admin
+Disallow: /test
+Disallow: /dev
+Disallow: /.well-known/
+Disallow: /api/
+
+# Permitir crawlers de mídia social
+User-agent: facebookexternalhit/*
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# Sitemap
+Sitemap: https://www.modoride.com.br/sitemap.xml
+
+# Crawl-delay para não sobrecarregar o servidor
+Crawl-delay: 1
