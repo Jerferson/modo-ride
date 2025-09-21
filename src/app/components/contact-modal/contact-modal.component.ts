@@ -61,9 +61,12 @@ export class ContactModalComponent implements OnInit {
         next: () => {
           this.loading = false
           this.submitted = true
+          console.log('✅ Lead enviado com sucesso!');
         },
-        error: () => {
+        error: (error) => {
           this.loading = false
+          console.error('❌ Erro ao enviar lead:', error);
+          this.leadService.testHubSpotConnection();
           // Handle error - could show error message
         }
       })
