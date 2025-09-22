@@ -14,34 +14,34 @@ export interface BreadcrumbItem {
   standalone: true,
   imports: [CommonModule, RouterModule],
   template: `
-    <nav class="breadcrumb-nav" aria-label="Navegação estrutural" 
+    <nav class="breadcrumb-nav" aria-label="Navegação estrutural"
          itemscope itemtype="https://schema.org/BreadcrumbList">
       <ol class="breadcrumb-list">
-        <li *ngFor="let item of breadcrumbs; let i = index" 
+        <li *ngFor="let item of breadcrumbs; let i = index"
             class="breadcrumb-item"
             [class.active]="item.isActive"
-            itemprop="itemListElement" 
-            itemscope 
+            itemprop="itemListElement"
+            itemscope
             itemtype="https://schema.org/ListItem">
-          
-          <a *ngIf="!item.isActive" 
-             [routerLink]="item.url" 
+
+          <a *ngIf="!item.isActive"
+             [routerLink]="item.url"
              itemprop="item"
              class="breadcrumb-link">
             <span itemprop="name">{{ item.label }}</span>
           </a>
-          
-          <span *ngIf="item.isActive" 
-                itemprop="name" 
+
+          <span *ngIf="item.isActive"
+                itemprop="name"
                 class="breadcrumb-current"
                 aria-current="page">
             {{ item.label }}
           </span>
-          
+
           <meta itemprop="position" [content]="i + 1">
-          
-          <span *ngIf="i < breadcrumbs.length - 1" 
-                class="breadcrumb-separator" 
+
+          <span *ngIf="i < breadcrumbs.length - 1"
+                class="breadcrumb-separator"
                 aria-hidden="true">
             >
           </span>
@@ -104,16 +104,16 @@ export interface BreadcrumbItem {
       .breadcrumb-nav {
         padding: 0.5rem 0;
       }
-      
+
       .breadcrumb-link,
       .breadcrumb-current {
         font-size: 0.8rem;
       }
-      
+
       .breadcrumb-list {
         gap: 0.25rem;
       }
-      
+
       .breadcrumb-item {
         gap: 0.25rem;
       }
@@ -130,7 +130,7 @@ export class BreadcrumbComponent implements OnInit {
     if (this.autoGenerate && this.breadcrumbs.length === 0) {
       this.generateBreadcrumbs();
     }
-    
+
     // Adicionar JSON-LD para breadcrumbs
     this.addBreadcrumbStructuredData();
   }
@@ -147,7 +147,7 @@ export class BreadcrumbComponent implements OnInit {
     segments.forEach((segment, index) => {
       currentPath += `/${segment}`;
       const isLast = index === segments.length - 1;
-      
+
       this.breadcrumbs.push({
         label: this.getSegmentLabel(segment),
         url: currentPath,
@@ -170,7 +170,7 @@ export class BreadcrumbComponent implements OnInit {
 
   private addBreadcrumbStructuredData(): void {
     const breadcrumbLD = this.seoService.generateBreadcrumbs(window.location.pathname);
-    
+
     // Adicionar script JSON-LD para breadcrumbs
     const script = document.createElement('script');
     script.type = 'application/ld+json';

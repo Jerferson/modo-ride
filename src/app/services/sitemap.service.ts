@@ -4,11 +4,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SitemapService {
-  
+
   generateSitemap(): string {
     const baseUrl = 'https://www.modoride.com.br';
     const currentDate = new Date().toISOString().split('T')[0];
-    
+
     const urls = [
       {
         loc: baseUrl,
@@ -50,7 +50,7 @@ export class SitemapService {
 
     let sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n';
     sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
-    
+
     urls.forEach(url => {
       sitemap += '  <url>\n';
       sitemap += `    <loc>${url.loc}</loc>\n`;
@@ -59,9 +59,9 @@ export class SitemapService {
       sitemap += `    <priority>${url.priority}</priority>\n`;
       sitemap += '  </url>\n';
     });
-    
+
     sitemap += '</urlset>';
-    
+
     return sitemap;
   }
 
@@ -69,13 +69,13 @@ export class SitemapService {
   addProductUrls(products: any[]): string {
     const baseUrl = 'https://www.modoride.com.br';
     const currentDate = new Date().toISOString().split('T')[0];
-    
+
     let productSitemap = '';
-    
+
     products.forEach(product => {
       const category = product.category.toLowerCase().replace(/\s+/g, '-');
       const productUrl = `${baseUrl}/${category}/${product.slug}`;
-      
+
       productSitemap += '  <url>\n';
       productSitemap += `    <loc>${productUrl}</loc>\n`;
       productSitemap += `    <lastmod>${currentDate}</lastmod>\n`;
@@ -83,7 +83,7 @@ export class SitemapService {
       productSitemap += `    <priority>0.7</priority>\n`;
       productSitemap += '  </url>\n';
     });
-    
+
     return productSitemap;
   }
 }

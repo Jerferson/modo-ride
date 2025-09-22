@@ -12,7 +12,7 @@ export const routes: Routes = [
     data: { category: 'patinetes', title: 'Patinetes Elétricos | Scooters de Alta Qualidade - Modo Ride' }
   },
   {
-    path: 'bicicletas-eletricas', 
+    path: 'bicicletas-eletricas',
     loadComponent: () => import('./pages/catalog/catalog.component').then(m => m.CatalogComponent),
     data: { category: 'bicicletas-eletricas', title: 'Bicicletas Elétricas | E-bikes Inovadoras - Modo Ride' }
   },
@@ -37,7 +37,7 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/about/about.component').then(m => m.AboutComponent),
     title: 'Sobre a Modo Ride | Nossa História e Missão na Mobilidade Urbana'
   },
-  // Manter rota antiga para compatibilidade  
+  // Manter rota antiga para compatibilidade
   {
     path: 'sobre',
     redirectTo: '/sobre-nos',

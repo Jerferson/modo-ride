@@ -43,26 +43,26 @@ export class LazyLoadDirective implements AfterViewInit {
 
   private loadImage(): void {
     const img = this.el.nativeElement;
-    
+
     if (img.tagName === 'IMG' && this.appLazyLoad) {
       const tempImg = new Image();
-      
+
       tempImg.onload = () => {
         img.src = this.appLazyLoad;
         img.classList.remove('lazy-loading');
         img.classList.add('lazy-loaded');
-        
+
         // Trigger fade-in effect
         setTimeout(() => {
           img.style.opacity = '1';
         }, 10);
       };
-      
+
       tempImg.onerror = () => {
         img.classList.add('lazy-error');
         console.warn(`Falha ao carregar imagem: ${this.appLazyLoad}`);
       };
-      
+
       tempImg.src = this.appLazyLoad;
     }
   }

@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit() {
     // Configurar SEO para homepage
     this.setupHomeSEO();
-    
+
     // Carregar produtos em destaque
     this.productService.getFeaturedProducts().subscribe(products => {
       this.featuredProducts = products

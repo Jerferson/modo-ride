@@ -109,7 +109,7 @@ export class SeoService {
     this.updateMetaTag('og:title', fullSEOData.ogTitle || fullSEOData.title, 'property');
     this.updateMetaTag('og:description', fullSEOData.ogDescription || fullSEOData.description, 'property');
     this.updateMetaTag('og:type', fullSEOData.ogType || 'website', 'property');
-    
+
     if (fullSEOData.ogImage) {
       this.updateMetaTag('og:image', fullSEOData.ogImage, 'property');
     }
@@ -236,7 +236,7 @@ export class SeoService {
       const position = index + 2;
       const name = this.getPageNameFromSegment(segment);
       const url = `https://www.modoride.com.br/${pathSegments.slice(0, index + 1).join('/')}`;
-      
+
       breadcrumbs.itemListElement.push({
         "@type": "ListItem",
         "position": position,
@@ -251,7 +251,7 @@ export class SeoService {
   private getPageNameFromSegment(segment: string): string {
     const names: { [key: string]: string } = {
       'patinetes-eletricos': 'Patinetes Elétricos',
-      'bicicletas-eletricas': 'Bicicletas Elétricas', 
+      'bicicletas-eletricas': 'Bicicletas Elétricas',
       'bicicletas': 'Bicicletas',
       'acessorios': 'Acessórios',
       'sobre-nos': 'Sobre Nós'

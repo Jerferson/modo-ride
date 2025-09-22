@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  
+
   <!-- Homepage -->
   <url>
     <loc>https://www.modoride.com.br/</loc>
@@ -14,7 +14,7 @@
       <image:caption>Patinetes e bicicletas elétricas premium</image:caption>
     </image:image>
   </url>
-  
+
   <!-- Patinetes Elétricos -->
   <url>
     <loc>https://www.modoride.com.br/patinetes-eletricos</loc>
@@ -27,7 +27,7 @@
       <image:caption>Scooters elétricos de alta qualidade para mobilidade urbana</image:caption>
     </image:image>
   </url>
-  
+
   <!-- Bicicletas Elétricas -->
   <url>
     <loc>https://www.modoride.com.br/bicicletas-eletricas</loc>
@@ -40,7 +40,7 @@
       <image:caption>E-bikes modernas com tecnologia avançada</image:caption>
     </image:image>
   </url>
-  
+
   <!-- Bicicletas Convencionais -->
   <url>
     <loc>https://www.modoride.com.br/bicicletas</loc>
@@ -53,7 +53,7 @@
       <image:caption>Bikes de qualidade para cidade e lazer</image:caption>
     </image:image>
   </url>
-  
+
   <!-- Acessórios -->
   <url>
     <loc>https://www.modoride.com.br/acessorios</loc>
@@ -66,7 +66,7 @@
       <image:caption>Capacetes, peças e acessórios para sua segurança</image:caption>
     </image:image>
   </url>
-  
+
   <!-- Sobre Nós -->
   <url>
     <loc>https://www.modoride.com.br/sobre-nos</loc>
@@ -74,7 +74,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
+
   <!-- Produtos específicos (exemplo) -->
   <url>
     <loc>https://www.modoride.com.br/patinetes-eletricos/patinete-premium-x1</loc>
@@ -87,7 +87,7 @@
       <image:caption>Patinete elétrico de alta performance com autonomia de 25km</image:caption>
     </image:image>
   </url>
-  
+
   <url>
     <loc>https://www.modoride.com.br/bicicletas-eletricas/ebike-urban-pro</loc>
     <lastmod>2025-01-21</lastmod>
